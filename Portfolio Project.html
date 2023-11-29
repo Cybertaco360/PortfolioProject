@@ -1,0 +1,387 @@
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width-device-width, initial-scale=1.0">
+<!-- References and other links :) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap">
+
+
+
+<!--Beginning to do stuff: Portfolio Project for Mr. Petr. Hopefully this works :) -->
+        </head>
+        <title>Main Page - B.I.N</title>
+        
+<!--Modal Styling Part-->
+
+<style>
+
+
+
+.accordion-button:not(.collapsed){
+  background-color: black;
+  color:whitesmoke;
+}
+
+.card{
+  background-color: grey;
+}
+
+.accordion-button{
+  background-color: black;
+  color:whitesmoke;
+}
+
+  .accordion-item {
+    background-color: #343a40;
+    color: #ffffff;}
+    
+  #mainContent {
+      display: none;
+  }
+  #customModal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            z-index: 1000;
+            display: none;
+        }
+</style>
+</head>
+
+<body class="text-ligh bg-dark">
+
+    <!-- Modal -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="welcomeModal">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Welcome to the <b>Project - B.I.N!</b></h5>
+                </div>
+                <div class="modal-body">
+                    <p>This site is illegitimate, all content was created through Bootstrap 5 and is used as a display rather than a fully-functional site. It's contents are jokes and not to be taken seriously. Enjoy the experience!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="acceptBtn">Accept</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Main content container -->
+<div class="container mt-5" id="mainContent">
+         <!-- A grey horizontal navbar that becomes vertical on small screens -->
+         <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand text-light font-arial" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
+                  <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5"/>
+                  <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85z"/>
+                </svg>
+                Project - B.I.N
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active text-light fw-bold" aria-current="page" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                      <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+                    </svg>Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-info" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                      <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                    </svg>Contact Us</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-warning" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tree" viewBox="0 0 16 16">
+                        <path d="M8.416.223a.5.5 0 0 0-.832 0l-3 4.5A.5.5 0 0 0 5 5.5h.098L3.076 8.735A.5.5 0 0 0 3.5 9.5h.191l-1.638 3.276a.5.5 0 0 0 .447.724H7V16h2v-2.5h4.5a.5.5 0 0 0 .447-.724L12.31 9.5h.191a.5.5 0 0 0 .424-.765L10.902 5.5H11a.5.5 0 0 0 .416-.777l-3-4.5zM6.437 4.758A.5.5 0 0 0 6 4.5h-.066L8 1.401 10.066 4.5H10a.5.5 0 0 0-.424.765L11.598 8.5H11.5a.5.5 0 0 0-.447.724L12.69 12.5H3.309l1.638-3.276A.5.5 0 0 0 4.5 8.5h-.098l2.022-3.235a.5.5 0 0 0 .013-.507z"/>
+                      </svg>Hireable Resources!
+                    </a>
+                    <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item text-info" href="#">N/A</a></li>
+                      <li><a class="dropdown-item text-info" href="#">N/A</a></li>
+                      <li><a class="dropdown-item text-info" href="#">N/A</a></li>
+                      <li><a class="dropdown-item text-info" href="#">N/A</a></li>
+                      <li><a class="dropdown-item text-info" href="#">N/A</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled text-light" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                  </li>
+                </ul>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search Disabled(Haven't figured it out yet :( )" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search Disabled(Haven't figured it out yet :( ))</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+            <body> 
+                <!-- Carousel Section -->
+                <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                      <div class="carousel-item active">
+                          <img src="/Assets & Items/City on a drawing.jpg" class="d-block w-100" alt="Slide 1">
+                          <div class="carousel-caption d-none d-md-block">
+                            <h1><i>A Future Emerging Through our Imagination</i></h5>
+                            <p>AI Generated Image Through The Program of Our Graduates</p>
+                        </div>
+                        </div>
+                      <div class="carousel-item">
+                          <img src="/Assets & Items/AI Boy in a city.jpg" class="d-block w-100" alt="Slide 2">
+                          <div class="carousel-caption d-none d-md-block"><h1><i>The Expectation of Our Next generation</i></h5>
+                            <p>AI Generated Through the Program of our Graduates</p></div>
+                        </div>
+                        <div class="carousel-item">
+                      <img src="/Assets & Items/AI Void.jpg" class="d-block w-100" alt="Slide 3">
+                      <div class="carousel-caption d-none d-md-block"><h1><i>The Creation of Destiny</i></h5>
+                            <p>AI Generated Through the Program of our Graduates</p></div>
+                   </div>
+                   </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                  </button>
+              </div>
+       <!-- Filler Text and other convincing Stuff Section -->
+<div class="container mt-5">
+<h2 class="text-center mb-4 text-light" style="font-family: 'Exo', sans-serif;">Explore Your Potential with B.I.N</h2>
+<p class="text-light lead">
+    Welcome to the revolutionary world of B.I.N - a cutting-edge program designed to unveil your true potential and place you in the context of the global stage. At B.I.N, we believe in transparency and self-awareness, empowering you to navigate the complexities of life with a clear understanding of your strengths and areas for improvement. <i> - Goldy Yan 2023 </i><span class="badge bg-info">Founder & Current CEO</span>
+</p>
+<p class="text-light">
+    Our advanced data-collecting system ensures a comprehensive analysis of your skills, passions, and aspirations. Join a community of like-minded individuals who, like you, are on a journey of self-discovery and growth.
+</p>
+<p class="text-light">
+    B.I.N is not just a platform; it's a movement. Through our innovative profiling techniques, you'll gain valuable insights into your unique place in society. Track your progress, connect with others, and harness the power of collective success.
+</p>
+<p class="text-light">
+    Whether you're a seasoned professional or just starting your journey, B.I.N is here to guide you. Build your portfolio, form meaningful connections, and embark on a path of continuous improvement. Success awaits, and it begins with B.I.N.
+</p>
+</div>
+                         <!-- Beginning with content now -->
+                    
+                   <h1><strong>The Portfolio Experience with
+                    B.I.N</strong></h1>
+
+                    <div class="mt-4 p-5 bg-dark text-info rounded">
+                      <h1>The Beginning to a Portfolio</h1>
+                      <p class="fw-light"><i>This is where your future begins, somewhere where something you truly love will be your key to success.</i></p>
+                      <!-- Accordion Section -->
+                      <div class="accordion bg-dark text-dark" id="accordion">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              <b>Why choose B.I.N?</b>
+                            </button>
+                          </h2>
+                          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              <strong>This is the First ever portfolio site that is used to make you feel like garbage.</strong> It is shown by studies, that a majority of American students believe that they are above average in everything and believe they can accomplish anything, reality is usually the factor that changes them. Project B.I.N is a program and community that focuses on allowing you to truly understand where you are at in this society, whether or not you're garbage or you're scrap to our country.
+                            </div>
+                              <h6><u>How B.I.N affects our generation</u></h6>
+                              <div>Success Percentage our generation receives <b>WITHOUT</b> the support of B.I.N</div>
+                              <div class="progress">
+                                <div class="text-light fw-bold progress-bar progress-bar-striped progress-bar-animated bg-dark" role="progressbar" style="width: 2%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">Lucky 2%</div>  <div class="progress-bar bg-danger text-light fw-bold progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width:98%">
+                                  Useless
+                                </div>
+                              </div>
+                              <div></div>
+                              Success Percentage our generation receives <b>WITH</b> the support of B.I.N 
+                              <div class="progress">
+                                <div class="text-light fw-bold progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 97%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10">97% Success Rate</div>
+                                <div class="progress-bar bg-danger text-light fw-bold progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width:3%">
+                                  3% Failures
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              <b>What is B.I.N?</b>
+                            </button>
+                          </h2>
+                          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              <strong>Bin is the beginning to a self-conscious future</strong> It is hidden by default, until reality strikes. B.I.N is the program and community that you are capable of comparing to. An advanced datacollecting system that will put you in your place in society. You will form form relations and develop further with your code and you'll acknowledge what it is that B.I.N has done to change the pathways of your life.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <b>How do I get involved?</b>
+                            </button>
+                          </h2>
+                          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              <i>You are allowed to be involved the second you have established your needs.</i>
+                              Build your portfolio, connect with others, unite in <strong><i>Success.</i></strong><i> With B.I.N.</i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <br>
+                    <h4 class="text-info"><b>The Differences Between the Lower-Class Members of Our Community You Can Compare to!</b></h4> 
+                  
+                  <div class="card mt-4 bg-light text-light border border-info rounded">
+                      <div class="row g-0">
+                          <!-- Left column for the image -->
+                          <div class="col-md-3">
+                              <img src="Assets & Items/Anonymous User.png" class="card-img border-dark" alt="Profile Image">
+                          </div>
+                          <!-- Right column for text content -->
+                          <div class="col-md-8">
+                              <div class="card-body">
+                                  <h5 class="card-title text-dark">John Doe</h5><h4><span class="badge bg-warning">Lower-Class</span></h4><h4><span class="badge bg-info">Computer Science</span></h4>
+                                  <p class="card-text">Web Developer</p>
+                                  <p class="card-text">Passionate about creating amazing web experiences. Always eager to learn and explore new technologies.</p>
+                                  <ul class="list-group list-group-flush">
+                                      <li class="list-group-item">Skills: HTML, CSS, JavaScript, React</li>
+                                      <li class="list-group-item">Education: Bachelor's in Computer Science</li>
+                                      <li class="list-group-item">Experience: 3 years in web development</li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="card mt-4 bg-light text-light border border-info rounded">
+                    <div class="row g-0">
+                        <!-- Left column for the image -->
+                        <div class="col-md-3">
+                            <img src="Assets & Items/Anonymous User.png" class="card-img border-dark" alt="Profile Image">
+                        </div>
+                        <!-- Right column for text content -->
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title text-dark">Felix Spencer</h5><h4><span class="badge bg-warning">Lower-Class</span></h4><h4><span class="badge bg-info">Teaching & Civics</span></h4>
+                                <p class="card-text">Teacher</p>
+                                <p class="card-text">Loves helping our students. Always eager to show his great support and education to his fellow students.</p>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Skills: Personality</li>
+                                    <li class="list-group-item">Education: Bachelor's From Teaching College</li>
+                                    <li class="list-group-item">Experience: 6 Years in Teaching, 2 Years on in engineering</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <h4 class="text-info"><b>The Differences Between the Medium-Class Members of Our Community You Can Compare to!</b></h4> 
+                <div class="card mt-5 bg-dark text-light border border-warning rounded">
+                  <div class="row g-0">
+                      <!-- Left column for the image -->
+                      <div class="col-md-4">
+                          <img src="Assets & Items/Anonymous User.png" class="card-img border border-warning" alt="Jeremy Mcouster">
+                      </div>
+                      <!-- Right column for text content -->
+                      <div class="col-md-8">
+                          <div class="card-body">
+                              <h5 class="card-title">Jeremy Mcouster</h5><h4><span class="badge bg-warning">Medium-Class</span></h4><h4><span class="badge bg-info">Advanced Technological Human-Being</span></h4>
+                              <p class="card-text">Nuclear Database Engineer</p>
+                              <p class="card-text">Multi-Ph.D. from Harvard, Cambridge, Stanford, Tsinghua, Oxford, MIT, UCLA, Princeton, Tokyo...</p>
+                              <p class="card-text">Skills: Quantum Computing, Nuclear Fusion Magic, Teleportation Programming</p>
+                              <p class="card-text">Education: Multi-Ph.D. in Nuclear Physics, Quantum Computing, Cybernetic Transfusion, Interdimensional Teleportation, and etc.</p>
+                              <p class="card-text">Experience: Over 1000 years in the field of Nuclear Database Engineering (thanks to time manipulation and working multiple jobs at the same time)</p>
+                              <ul class="list-group list-group-flush">
+                                  <li class="list-group-item">Published over 500,000+ research papers in parallel universes.</li>
+                                  <li class="list-group-item">Discovered the secret to infinite energy using potatos and breaking laws of physics.</li>
+                                  <li class="list-group-item">Invented multiple programming language based on interpreting cosmic vibrations and electromagnetic supernova radiation wave.</li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <h4 class="text-info"><b>The Differences Between the High-Class Members of Our Community You Can Compare to!</b></h4> 
+
+<br>
+
+              <h2 class="text-center text-danger"><b><i>Loading Error, Don't expect a high-Class resume to take a few seconds to load. Please understand how hard it was for some of our members to receive their final resumes :)</b></i></h4> 
+
+
+
+              <div class="mt-5 p-5 bg-light text-adrk rounded">
+                <h2>Contact Us</h2>
+                <p class="fw-light">Have questions, want to join Project B.I.N, or just want to say hi? Reach out using the form below! Time to Compare yourself to the rest of this world and embrace your true nature. :)</p>
+            
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Your Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Your Portfolio (Skills, Education, Experience, and etc.)</label>
+                        <textarea class="form-control" id="message" rows="4" placeholder="Type your message here"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Submit Portfolio</button>
+                </form>
+            </div>
+            
+              
+
+<!-- Final Submission Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Your Portfolio Has Been Sent!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        You've submitted your portfolio! Now please wait till our administration team verifies and provides you with your credentials soon! We hope you've enjoyed your visit :)
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info" data-bs-dismiss="modal">Got That!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+                
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- JavaScript to handle modal activation, hiding content, and refreshing the page -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          // Show the modal on page load
+          var welcomeModal = new bootstrap.Modal(document.getElementById('welcomeModal'), { backdrop: 'static', keyboard: false });
+          welcomeModal.show();
+
+          // Handle the "Accept" button click to hide the modal and show the content
+          document.getElementById("acceptBtn").addEventListener("click", function () {
+              // Hide the modal
+              welcomeModal.hide();
+
+              // Show the content
+              document.getElementById('mainContent').style.display = "block";
+          });
+      });
+  </script>
+
+  </body>
+</html>
